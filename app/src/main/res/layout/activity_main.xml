@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:theme="@style/AppTheme.NoActionBar"
+    android:screenOrientation="portrait"
+    android:configChanges="keyboardHidden"
+    tools:context="farolagape.com.br.ticketscanner.MainActivity"
+    >
+
+    <include layout="@layout/content_main" />
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="64dp"
+        android:layout_height="57dp"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        android:tint="@color/colorPrimaryDark"
+        app:backgroundTint="@color/colorPrimary"
+        app:elevation="7dp"
+        app:srcCompat="@drawable/qr_code" />
+
+</android.support.design.widget.CoordinatorLayout>
