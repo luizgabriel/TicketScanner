@@ -15,7 +15,11 @@ import com.google.zxing.integration.android.IntentIntegrator
 
 class MainActivity : AppCompatActivity() {
 
-    lateinit var fab : FloatingActionButton;
+    companion object {
+        val CODE = "br.com.farolagape.CODE"
+    }
+
+    private lateinit var fab : FloatingActionButton;
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,8 +45,15 @@ class MainActivity : AppCompatActivity() {
         if (content == null)
             Snackbar.make(fab, "Você cancelou o scanner", Snackbar.LENGTH_LONG).setAction("Action", null).show();
         else
-            Snackbar.make(fab, content, Snackbar.LENGTH_LONG).setAction("Action", null).show();
+            openTicket(content)
 
         super.onActivityResult(requestCode, resultCode, data)
+    }
+
+    private fun  openTicket(content: String) {
+        startActivity (
+            Intent(this, TicketActivity::class.java)
+                    .putExtra(CODE, content)
+        )
     }
 }
